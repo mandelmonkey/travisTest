@@ -12,6 +12,7 @@ jobs:
       before_install: 
         - nvm install $NODE_VERSION
         - export PATH=$GOPATH/bin:$PATH
+        - ./TestAppium
        #  - open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
 
       install: 

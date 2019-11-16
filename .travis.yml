@@ -13,7 +13,6 @@ jobs:
         - nvm install $NODE_VERSION
         - export PATH=$GOPATH/bin:$PATH
         - open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
-        - brew update
 
       install: 
         - npm install -g appium

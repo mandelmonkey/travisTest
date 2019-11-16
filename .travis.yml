@@ -10,27 +10,27 @@ jobs:
       before_install: 
         - nvm install $NODE_VERSION
         - export PATH=$GOPATH/bin:$PATH
-        - ./TestAppium
-       #  - open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
+       # - ./TestAppium
+        - open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
 
       install: 
-       #  - npm install -g appium
-       #  - npm install -g mocha
-       #  - npm install wd 
-       #  - appium &
-       #  - npm install -g appcelerator titanium alloy
-       #  - npm install underscore moment xml2js cloudinary
-       #  - ti sdk install latest --no-progress-bars  
-       #  - ti clean
-       #  - ti build -p ios
-       #  - echo "build succeded"
+         - npm install -g appium
+         - npm install -g mocha
+         - npm install wd 
+         - appium &
+         - npm install -g appcelerator titanium alloy
+         - npm install underscore moment xml2js cloudinary
+         - ti sdk install latest --no-progress-bars  
+         - ti clean
+         - ti build -p ios
+         - echo "build succeded"
 
       before_script:
         # - gulp 'start:emulator'
         # - gulp 'config:tiapp' --test
 
       script:
-        - mocha test2.js
+        - mocha test.js
 
     - stage: android
       language: java

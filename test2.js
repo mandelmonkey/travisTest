@@ -25,7 +25,7 @@ describe("ios simple", function () {
   platformVersion: '13.2',//13.0
   deviceName: 'iPhone X',//'iPhone 11 Pro Max',
   automationName: "XCUITest",
-  iosInstallPause:8000, 
+  iosInstallPause:80000, 
       showXcodeLog:true, 
       app: process.cwd()+"/Nayuta.app"
 };

@@ -14,7 +14,6 @@ jobs:
         - export PATH=$GOPATH/bin:$PATH
         - open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
         - brew update
-        - brew install carthage
 
       install: 
         - npm install -g appium
@@ -22,8 +21,7 @@ jobs:
         - npm install wd 
         - npm install -g appcelerator titanium alloy
         - npm install underscore moment xml2js cloudinary
-        - ti sdk install latest --no-progress-bars
-        - ti sdk install 8.1.0.GA --no-progress-bars   
+        - ti sdk install latest --no-progress-bars  
         - ti clean
         - ti build -p ios
         - echo "build succeded"

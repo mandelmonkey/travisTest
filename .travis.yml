@@ -23,6 +23,10 @@ jobs:
         - ti build -p ios
         - echo "build succeded"
 
+      before_script:
+      # - gulp 'start:emulator'
+      # - gulp 'config:tiapp' --test
+
       script:
         - mocha test.js
 

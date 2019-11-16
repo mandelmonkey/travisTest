@@ -8,11 +8,9 @@ jobs:
         directories:
         - $HOME/.m2
       env: 
-        - NODE_VERSION="8.16.0" PLATFORM="ios" BUILD_COMMAND="ti build -p ios --build-only"
+        - NODE_VERSION="8.16.0"
       before_install: 
         - nvm install $NODE_VERSION
-        - export PATH=$GOPATH/bin:$PATH
-        - open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
 
       install: 
         - npm install -g appium
@@ -20,50 +18,14 @@ jobs:
         - npm install wd 
         - appium --log-level info > appium_log.txt &
         - npm install -g appcelerator titanium alloy
-        - npm install underscore moment xml2js cloudinary
         - ti sdk install latest --no-progress-bars  
         - ti clean
         - ti build -p ios
         - echo "build succeded"
 
-      before_script:
-        # - gulp 'start:emulator'
-        # - gulp 'config:tiapp' --test
-
       script:
-        - mocha test2.js
-
-    - stage: android
-      language: java
-      dist: trusty 
-      cache: npm
-      env: 
-        - NODE_VERSION="8.16.0" PLATFORM="android" ANDROID_VERSION="28" BUILD_COMMAND="ti build -p android --build-only"
-      before_install:
-        - nvm install $NODE_VERSION
-        - export ANDROID_HOME=/home/travis/build
-        - export ANDROID_SDK=$ANDROID_HOME
-        - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
-        - export PATH=/home/travis/build/tools:/home/travis/build/tools/bin:$PATH
-        - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
-        - export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-
-      install: 
-        - npm install -g appcelerator titanium alloy gulp
-        - npm install gulp underscore moment gulp-util xml2js cloudinary
-        - ti sdk install 8.1.0.GA --no-progress-bars
-        - java -version
-        - echo $JAVA_HOME 
-        - gulp 'install:android_sdk' 
-        - $BUILD_COMMAND
-
-      before_script:
-        # - gulp 'start:emulator'
-        # - gulp 'config:tiapp' --test
-
-      script: 
-        - gulp 'test:jasmine'
+        - mocha test.js
 
 notifications:
   email:
-    - chris@nayuta.io
+    - email@mydomain.io

@@ -1,12 +1,6 @@
 "use strict";
 
-
-//require("./helpers/setup");
-
-var wd = require("wd"),
-    _ = require('underscore'),
-    Q = require('q');
-    //serverConfigs = require('./helpers/appium-servers');
+var wd = require("wd");
 
 describe("ios simple", function () {
   this.timeout(10000000);
@@ -14,19 +8,26 @@ describe("ios simple", function () {
   var allPassed = true;
 
   before(function () {
-    var serverConfig =  {
-        host: 'localhost',
-        port: 4723
-      };
-      
+    var serverConfig = {
+      host: 'localhost',
+      port: 4723
+    };
+
     driver = wd.promiseChainRemote(serverConfig);
     require("./helpers/logging").configure(driver);
 
-    var desired = _.clone(require("./helpers/caps").ios); 
-    if (process.env.npm_package_config_sauce) {
-      desired.name = 'ios - simple';
-      desired.tags = ['sample'];
-    }
+    var desired = {
+      browserName: '',
+      platformName: 'iOS',
+      platformVersion: '12.0',
+      deviceName: 'iPhone X',
+      automationName: "XCUITest",
+      useNewWDA: true,
+      noReset: true,
+      showXcodeLog: true,
+      app: process.cwd() + "/build/iphone/build/Products/Debug-iphonesimulator/travisTest.app"
+    };
+
     return driver.init(desired);
   });
 
@@ -44,17 +45,7 @@ describe("ios simple", function () {
     allPassed = allPassed && this.currentTest.state === 'passed';
   });
 
-  
-
-  it("Should Press Create New Wallet", function () {
+  it("Should do a test", function () {
     return true;
-    setTimeout(function(){
-    return driver.
-    elementByAccessibilityId('Create New Wallet')
-      .click().sleep(1000) 
-     //return driver.click("~Create New Wallet")
-    }); 
-    },5000);
-   
-
+  });
 });

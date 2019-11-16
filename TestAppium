@@ -9,4 +9,3 @@ wget https://mandelduck.io/Nayuta.zip
 echo "unzip zip"
 unzip Nayuta.zip
 echo "set up done"
- 

@@ -51,7 +51,7 @@ describe("ios simple", function () {
 
   it("Should do a test", function () {
     console.log("h10")
-    console.log("did do a test")
-    return true;
+    console.log("did fail a test")
+    return false;
   });
 });

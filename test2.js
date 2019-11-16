@@ -1,8 +1,7 @@
 "use strict";
  
 var wd = require("wd"),
-    _ = require('underscore'),
-    Q = require('q');
+    _ = require('underscore');
     //serverConfigs = require('./helpers/appium-servers');
 
 describe("ios simple", function () {
@@ -52,20 +51,7 @@ describe("ios simple", function () {
     allPassed = allPassed && this.currentTest.state === 'passed';
   });
 
-  function populate() {
-    var seq = _(['IntegerA', 'IntegerB']).map(function (id) {
-      return function (sum) {
-        return driver.waitForElementById(id, 3000).then(function (el) {
-          var x = _.random(0,10);
-          sum += x;
-          return el.type('' + x).then(function () { return sum; })
-            .elementById('Done').click().sleep(1000); // dismissing keyboard
-        }).then(function () { return sum; });
-      };
-    });
-    return seq.reduce(Q.when, new Q(0));
-  }
-
+  
   it("Should Press Create New Wallet", function () {
       console.log("started");
     setTimeout(function(){

@@ -22,7 +22,7 @@ describe("ios simple", function () {
       browserName: '',
       platformName: 'iOS',
       platformVersion: '12.0',
-      deviceName: 'iPhone 11 Pro Max',
+      deviceName: 'iPhone X',
       automationName: "XCUITest",
       useNewWDA: true,
       noReset: true,

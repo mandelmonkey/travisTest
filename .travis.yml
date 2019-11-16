@@ -17,7 +17,7 @@ jobs:
          - npm install -g appium
          - npm install -g mocha
          - npm install wd 
-         - appium > appium_log.txt &
+         - appium &
          - npm install -g appcelerator titanium alloy
          - npm install underscore moment xml2js cloudinary
          - ti sdk install latest --no-progress-bars  

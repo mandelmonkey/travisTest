@@ -6,7 +6,7 @@ var wd = require("wd"),
     //serverConfigs = require('./helpers/appium-servers');
 
 describe("ios simple", function () {
-  this.timeout(60000);
+  this.timeout(100000000);
   var driver;
   var allPassed = true;
 
@@ -21,13 +21,12 @@ describe("ios simple", function () {
 
     var desired =  {
   browserName: '',
-  //'appium-version': '1.6',
+  'appium-version': '1.6',
   platformName: 'iOS',
   platformVersion: '13.0',//13.0
   deviceName: 'iPhone X',//'iPhone 11 Pro Max',
   automationName: "XCUITest",
-      useNewWDA:true,
-      noReset: true,
+  iosInstallPause:8000, 
       showXcodeLog:true, 
       app: process.cwd()+"/Nayuta.app"
 };
@@ -68,6 +67,7 @@ describe("ios simple", function () {
   }
 
   it("Should Press Create New Wallet", function () {
+      console.log("started");
     setTimeout(function(){
     return driver.
     elementByAccessibilityId('Create New Wallet')

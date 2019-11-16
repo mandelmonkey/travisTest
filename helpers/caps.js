@@ -8,5 +8,5 @@ exports.ios = {
       useNewWDA:true,
       noReset: true,
       showXcodeLog:true, 
-      app: process.cwd()+"/build/iphone/build/Products/Debug-iphonesimulator/test.app"
+      app: process.cwd()+"/build/iphone/build/Products/Debug-iphonesimulator/travisTest.app"
 };

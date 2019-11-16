@@ -19,6 +19,7 @@ jobs:
         - npm install -g appium
         - npm install -g mocha
         - npm install wd 
+        - appium --log-level info > appium_log.txt &
         - npm install -g appcelerator titanium alloy
         - npm install underscore moment xml2js cloudinary
         - ti sdk install latest --no-progress-bars  
@@ -31,7 +32,6 @@ jobs:
         # - gulp 'config:tiapp' --test
 
       script:
-        - appium --log-level info > appium_log.txt &
         - mocha test2.js
 
     - stage: android

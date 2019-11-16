@@ -17,12 +17,12 @@ jobs:
          - npm install -g appium
          - npm install -g mocha
          - npm install wd 
-         - appium &
+         - appium > appium_log.txt &
          - npm install -g appcelerator titanium alloy
          - npm install underscore moment xml2js cloudinary
          - ti sdk install latest --no-progress-bars  
          - ti clean
-         - ti build -p ios
+         - ti build -p ios --build-only" > titanium_log.txt
          - echo "build succeded"
 
       before_script:

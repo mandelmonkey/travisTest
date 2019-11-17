@@ -3,8 +3,7 @@ jobs:
     - stage: ios
       language: objective-c  
       os: osx
-      osx_image: xcode11.2 
-      cache: bundler
+      osx_image: xcode11.2
       env: 
         - NODE_VERSION="8.16.0" PLATFORM="ios" BUILD_COMMAND="ti build -p ios --build-only"
       before_install: 

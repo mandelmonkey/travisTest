@@ -3,7 +3,7 @@
 var wd = require("wd");
 console.log("h1")
 describe("ios simple", function () {
-  this.timeout(600000);
+  this.timeout(1200000);
   var driver;
   var allPassed = true;
   console.log("h2")

@@ -8,7 +8,8 @@ jobs:
       directories: 
        - Carthage
        - node_modules
-      env:  
+       - $(npm config get prefix)/lib/node_modules
+      env: 
         - NODE_VERSION="8.16.0" PLATFORM="ios" BUILD_COMMAND="ti build -p ios --build-only"
       before_install: 
         - nvm install $NODE_VERSION
@@ -18,12 +19,12 @@ jobs:
         - carthage bootstrap --verbose --no-use-binaries --platform iOS --cache-builds
 
       install: 
-         - npm ci appium
-         - npm ci mocha
-         - npm ci wd 
+         - npm install -g appium
+         - npm install -g mocha
+         - npm install wd 
          - appium --log-level info > appium_log.txt &
-         - npm ci appcelerator titanium alloy
-         - npm ci underscore moment xml2js cloudinary
+         - npm install -g appcelerator titanium alloy
+         - npm install underscore moment xml2js cloudinary
          - ti sdk install latest --no-progress-bars  
          - ti clean
          - ti build -p ios --build-only

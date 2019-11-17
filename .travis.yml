@@ -18,11 +18,11 @@ jobs:
         - carthage bootstrap --verbose --no-use-binaries --platform iOS --cache-builds
 
       install: 
-         - npm ci -g appium
-         - npm ci -g mocha
+         - npm ci appium
+         - npm ci mocha
          - npm ci wd 
          - appium --log-level info > appium_log.txt &
-         - npm ci -g appcelerator titanium alloy
+         - npm ci appcelerator titanium alloy
          - npm ci underscore moment xml2js cloudinary
          - ti sdk install latest --no-progress-bars  
          - ti clean

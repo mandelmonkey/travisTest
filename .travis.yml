@@ -5,7 +5,7 @@ jobs:
       os: osx
       osx_image: xcode11.2
       cache:
-      directories:
+      directories: 
        - Carthage
       env: 
         - NODE_VERSION="8.16.0" PLATFORM="ios" BUILD_COMMAND="ti build -p ios --build-only"

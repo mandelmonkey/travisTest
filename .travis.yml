@@ -24,7 +24,7 @@ jobs:
          - npm install -g appium
          - npm install -g mocha
          - npm install wd 
-         - appium --log-level info > appium_log.txt &
+         - appium &
          - npm install -g appcelerator titanium alloy
          - node bake.js
          - npm install underscore moment xml2js cloudinary

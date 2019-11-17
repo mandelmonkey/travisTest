@@ -5,13 +5,13 @@ jobs:
       os: osx
       osx_image: xcode11.2
       cache:
-      directories: 
-       - Carthage 
-       - node_modules
-       - $(npm config get prefix)/lib/node_modules
-       - $(npm config get prefix)/bin/appium
-       - $(npm config get prefix)/bin/mocha
-       - /Users/travis/.nvm/versions/node/v8.16.0/lib/node_modules
+        directories: 
+          - Carthage 
+          - node_modules
+          - $(npm config get prefix)/lib/node_modules
+          - $(npm config get prefix)/bin/appium
+          - $(npm config get prefix)/bin/mocha
+          - /Users/travis/.nvm/versions/node/v8.16.0/lib/node_modules
       env: 
         - NODE_VERSION="8.16.0" PLATFORM="ios" BUILD_COMMAND="ti build -p ios --build-only"
       before_install: 

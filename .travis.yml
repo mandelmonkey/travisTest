@@ -8,7 +8,7 @@ jobs:
       directories: 
        - Carthage
        - node_modules
-      env: 
+      env:  
         - NODE_VERSION="8.16.0" PLATFORM="ios" BUILD_COMMAND="ti build -p ios --build-only"
       before_install: 
         - nvm install $NODE_VERSION

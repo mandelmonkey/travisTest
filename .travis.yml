@@ -4,6 +4,9 @@ jobs:
       language: objective-c  
       os: osx
       osx_image: xcode11.2
+      cache:
+      directories:
+       - Carthage
       env: 
         - NODE_VERSION="8.16.0" PLATFORM="ios" BUILD_COMMAND="ti build -p ios --build-only"
       before_install: 
@@ -11,6 +14,7 @@ jobs:
         - export PATH=$GOPATH/bin:$PATH
        # - ./TestAppium
         - open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
+        - carthage bootstrap --verbose --no-use-binaries --platform iOS --cache-builds
 
       install: 
          - npm install -g appium

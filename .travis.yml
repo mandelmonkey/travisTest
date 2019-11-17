@@ -11,6 +11,7 @@ jobs:
        - $(npm config get prefix)/lib/node_modules
        - $(npm config get prefix)/bin/appium
        - $(npm config get prefix)/bin/mocha
+       - /Users/travis/.nvm/versions/node/v8.16.0/lib/node_modules
       env: 
         - NODE_VERSION="8.16.0" PLATFORM="ios" BUILD_COMMAND="ti build -p ios --build-only"
       before_install: 
@@ -19,11 +20,11 @@ jobs:
        # - ./TestAppium
         - open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
         - carthage bootstrap --verbose --no-use-binaries --platform iOS --cache-builds
-        - npm install -g appium
-        - npm install -g mocha
-        - npm install wd 
 
       install: 
+         - npm install -g appium
+         - npm install -g mocha
+         - npm install wd 
          - appium --log-level info > appium_log.txt &
          - npm install -g appcelerator titanium alloy
          - npm install underscore moment xml2js cloudinary

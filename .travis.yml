@@ -19,11 +19,11 @@ jobs:
        # - ./TestAppium
         - open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
         - carthage bootstrap --verbose --no-use-binaries --platform iOS --cache-builds
+        - npm install -g appium
+        - npm install -g mocha
+        - npm install wd 
 
       install: 
-         - npm install -g appium
-         - npm install -g mocha
-         - npm install wd 
          - appium --log-level info > appium_log.txt &
          - npm install -g appcelerator titanium alloy
          - npm install underscore moment xml2js cloudinary

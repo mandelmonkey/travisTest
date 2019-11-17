@@ -9,7 +9,6 @@ jobs:
           - Carthage  
           - node_modules
           - $(npm config get prefix)/lib/node_modules
-          - $(npm config get prefix)/bin/appium
           - $(npm config get prefix)/bin/mocha
           # - /Users/travis/.nvm/versions/node/v8.16.0/lib/node_modules
       env:  

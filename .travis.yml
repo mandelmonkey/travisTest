@@ -9,6 +9,8 @@ jobs:
        - Carthage 
        - node_modules
        - $(npm config get prefix)/lib/node_modules
+       - $(npm config get prefix)/bin/appium
+       - $(npm config get prefix)/bin/mocha
       env: 
         - NODE_VERSION="8.16.0" PLATFORM="ios" BUILD_COMMAND="ti build -p ios --build-only"
       before_install: 

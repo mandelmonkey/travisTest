@@ -20,12 +20,10 @@ jobs:
         - open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
         - carthage bootstrap --verbose --no-use-binaries --platform iOS --cache-builds
 
-      install: 
-         - pushd node_modules/appium-webdriveragent;
-         - carthage bootstrap --no-use-binaries;
-         - cp Cartfile.resolved Carthage;
-         - mkdir -p ./Resources/WebDriverAgent.bundle;
-         - popd;
+      install:  
+         - carthage bootstrap --no-use-binaries
+         - cp Cartfile.resolved Carthage
+         - mkdir -p ./Resources/WebDriverAgent.bundle
          - npm install -g appium
          - npm install -g mocha
          - npm install wd 
